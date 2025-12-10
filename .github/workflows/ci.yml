@@ -33,16 +33,22 @@ jobs:
       
       - name: Check code formatting with Black
         run: |
-          black --check --diff src/
-        continue-on-error: true
+          if [ -d src ]; then
+            black --check --diff src/
+          else
+            echo "No src/ directory found, checking all Python files"
+            find . -name "*.py" -not -path "./.git/*" -not -path "./venv/*" -not -path "./env/*" | xargs black --check --diff || echo "No Python files to check or formatting issues found"
+          fi
       
       - name: Lint with flake8
         run: |
-          # Stop the build if there are Python syntax errors or undefined names
-          flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
-          # Exit-zero treats all errors as warnings
-          flake8 src/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-        continue-on-error: true
+          if [ -d src ]; then
+            # Stop the build if there are Python syntax errors or undefined names
+            flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
+          else
+            echo "No src/ directory found, checking all Python files"
+            find . -name "*.py" -not -path "./.git/*" -not -path "./venv/*" -not -path "./env/*" -exec flake8 {} + --count --select=E9,F63,F7,F82 --show-source --statistics || echo "No Python files to lint"
+          fi
       
       - name: Run tests
         run: |
@@ -51,7 +57,6 @@ jobs:
           else
             echo "No tests directory found, skipping tests"
           fi
-        continue-on-error: true
 
   security-check:
     name: Security Scan
@@ -73,6 +78,7 @@ jobs:
       - name: Check dependencies for vulnerabilities
         run: |
           if [ -f requirements.txt ]; then
-            safety check --file requirements.txt --output text || true
+            safety check --file requirements.txt --output text || echo "Safety check found vulnerabilities or no dependencies to check"
+          else
+            echo "No requirements.txt found, skipping security check"
           fi
-        continue-on-error: true

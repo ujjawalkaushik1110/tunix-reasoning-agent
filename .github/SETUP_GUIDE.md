@@ -48,8 +48,8 @@ cd .github
    ✅ **Require status checks to pass before merging**
    - ✅ Require branches to be up to date before merging
    - Search and add these status checks:
-     - `lint-and-test`
-     - `security-check`
+     - `Lint and Test`
+     - `Security Scan`
    
    ✅ **Require conversation resolution before merging**
    
@@ -127,7 +127,7 @@ With these rules enabled:
 
 ### Status Checks Not Appearing
 
-If `lint-and-test` or `security-check` don't appear in the status checks list:
+If `Lint and Test` or `Security Scan` don't appear in the status checks list:
 
 1. Push a commit to trigger the CI/CD workflow
 2. Wait for the workflow to run at least once

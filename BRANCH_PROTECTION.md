@@ -25,8 +25,8 @@ Branch protection rules prevent force pushes, enforce code review requirements, 
 
 - **Require branches to be up to date before merging**: ✅ Enabled
 - **Required status checks**:
-  - `lint-and-test` (from CI/CD workflow)
-  - `security-check` (from CI/CD workflow)
+  - `Lint and Test` (from CI/CD workflow)
+  - `Security Scan` (from CI/CD workflow)
 
 **Why**: Automated tests and security checks must pass before code can be merged, preventing broken or vulnerable code from entering the main branch.
 
@@ -88,8 +88,8 @@ Branch Protection Rule for: main
 ✅ Require status checks to pass before merging
    ✅ Require branches to be up to date before merging
    Status checks:
-   - lint-and-test
-   - security-check
+   - Lint and Test
+   - Security Scan
 
 ✅ Require conversation resolution before merging
 

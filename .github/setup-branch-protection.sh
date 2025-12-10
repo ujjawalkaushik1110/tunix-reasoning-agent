@@ -7,11 +7,23 @@
 # - GitHub CLI (gh) must be installed: https://cli.github.com/
 # - User must be authenticated: gh auth login
 # - User must have admin permissions on the repository
+#
+# Usage:
+#   ./setup-branch-protection.sh [REPO] [BRANCH]
+#   
+# Examples:
+#   ./setup-branch-protection.sh
+#   ./setup-branch-protection.sh owner/repo main
 
 set -e
 
-REPO="ujjawalkaushik1110/tunix-reasoning-agent"
-BRANCH="main"
+# Default values
+DEFAULT_REPO="ujjawalkaushik1110/tunix-reasoning-agent"
+DEFAULT_BRANCH="main"
+
+# Accept command-line arguments or use defaults
+REPO="${1:-$DEFAULT_REPO}"
+BRANCH="${2:-$DEFAULT_BRANCH}"
 
 echo "🔒 Setting up branch protection rules for $REPO..."
 echo "Branch: $BRANCH"
@@ -52,7 +64,7 @@ if [ $? -eq 0 ]; then
     echo "   - Require pull request reviews (1 approval required)"
     echo "   - Require review from code owners"
     echo "   - Dismiss stale reviews on new commits"
-    echo "   - Require status checks (lint-and-test, security-check)"
+    echo "   - Require status checks (Lint and Test, Security Scan)"
     echo "   - Require branches to be up-to-date before merging"
     echo "   - Require conversation resolution before merging"
     echo "   - Block force pushes"
