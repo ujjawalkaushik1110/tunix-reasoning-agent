@@ -162,13 +162,31 @@ metrics = evaluator.evaluate(
 
 ## 🤝 Contributing
 
-Contributions welcome! Please:
+Contributions welcome! Please read our [Contributing Guidelines](.github/CONTRIBUTING.md) before submitting a PR.
 
+**Quick Start:**
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit changes (`git commit -m 'Add amazing feature'`)
 4. Push to branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+**Branch Protection:**
+The `main` branch is protected with the following rules:
+- ✅ Required pull request reviews (1 approval minimum)
+- ✅ Required status checks (CI/CD pipeline must pass)
+- ✅ Code owner review required
+- ✅ Conversation resolution required
+- ❌ Direct pushes blocked
+
+See [BRANCH_PROTECTION.md](BRANCH_PROTECTION.md) for complete details.
+
+## 🔒 Security
+
+We take security seriously. Please review our [Security Policy](.github/SECURITY.md) for information on:
+- Reporting vulnerabilities
+- Supported versions
+- Security best practices
 
 ## 📝 License
 

@@ -1,0 +1,26 @@
+# CODEOWNERS file for tunix-reasoning-agent
+# This file defines individuals or teams that are responsible for code in this repository.
+# 
+# Each line is a file pattern followed by one or more owners.
+# Order is important; the last matching pattern takes precedence.
+# 
+# These owners will be automatically requested for review when someone opens a 
+# pull request that modifies files matching the patterns.
+
+# Default owner for everything in the repo
+* @ujjawalkaushik1110
+
+# Source code requires review from repository owner
+/src/ @ujjawalkaushik1110
+
+# Data and training files require review
+/data/ @ujjawalkaushik1110
+
+# Documentation requires review
+*.md @ujjawalkaushik1110
+
+# GitHub configuration files require review
+/.github/ @ujjawalkaushik1110
+
+# Requirements and dependencies require review
+requirements.txt @ujjawalkaushik1110
