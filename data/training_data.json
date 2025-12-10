@@ -1,0 +1,30 @@
+{
+  "training_data": [
+    {
+      "problem": "A rectangle has length 8cm and width 5cm. What is its area and perimeter?",
+      "solution": "1. [Understand] Find area and perimeter of rectangle\n2. [Plan] Use formulas: Area = length × width, Perimeter = 2(length + width)\n3. [Execute] Area = 8 × 5 = 40 cm², Perimeter = 2(8+5) = 26 cm\n4. [Verify] Check: 8×5=40 ✓, 2(8+5)=26 ✓\n5. [Answer] Area: 40 cm², Perimeter: 26 cm"
+    },
+    {
+      "problem": "If a train travels 150 km in 3 hours, what is its average speed?",
+      "solution": "1. [Understand] Find average speed of train\n2. [Plan] Use formula: Speed = Distance / Time\n3. [Execute] Speed = 150 km / 3 hours = 50 km/h\n4. [Verify] Check: 50 km/h × 3 hours = 150 km ✓\n5. [Answer] The train's average speed is 50 km/h"
+    },
+    {
+      "problem": "Alice has 15 apples. She gives 7 to Bob and receives 3 from Carol. How many does she have now?",
+      "solution": "1. [Understand] Track Alice's apples through multiple transactions\n2. [Plan] Start with initial count, subtract gives, add receives\n3. [Execute] Start: 15, Give to Bob: 15 - 7 = 8, Receive from Carol: 8 + 3 = 11\n4. [Verify] Check: 15 - 7 + 3 = 11 ✓\n5. [Answer] Alice now has 11 apples"
+    },
+    {
+      "problem": "What is 25% of 80?",
+      "solution": "1. [Understand] Find 25% (one-quarter) of 80\n2. [Plan] Multiply 80 by 0.25 or divide by 4\n3. [Execute] 25% = 25/100 = 0.25, So: 80 × 0.25 = 20\n4. [Verify] Check: 20/80 = 0.25 = 25% ✓\n5. [Answer] 25% of 80 is 20"
+    },
+    {
+      "problem": "A book costs Rs. 500. It has a 20% discount. What is the final price?",
+      "solution": "1. [Understand] Calculate discounted price with 20% off\n2. [Plan] Find discount amount, subtract from original price\n3. [Execute] Discount = 20% of 500 = 0.2 × 500 = 100, Final price = 500 - 100 = 400\n4. [Verify] Check: 400 is 80% of 500 ✓\n5. [Answer] The final price is Rs. 400"
+    }
+  ],
+  "metadata": {
+    "total_samples": 5,
+    "created_date": "2025-12-10",
+    "for_competition": "Google Tunix Hack",
+    "description": "Training dataset for Tunix reasoning agent with multi-step problem solving"
+  }
+}
