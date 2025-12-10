@@ -3,8 +3,15 @@ Evaluation metrics for assessing reasoning quality.
 """
 
 from typing import Dict, Any, List, Optional
-import numpy as np
 from collections import defaultdict
+
+try:
+    import numpy as np
+except ImportError:
+    raise ImportError(
+        "numpy is required for evaluation metrics. "
+        "Install it with: pip install numpy"
+    )
 
 
 class ReasoningMetrics:

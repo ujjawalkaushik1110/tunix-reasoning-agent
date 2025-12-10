@@ -5,6 +5,11 @@ Problem Decomposer - Breaks down complex problems into manageable sub-problems.
 from typing import List, Dict, Any, Optional
 import re
 
+# Decomposition configuration constants
+MAX_CHILDREN_PER_PARENT = 3
+MIN_CHILDREN_PER_PARENT = 2
+CHARS_PER_CHILD = 50
+
 
 class ProblemDecomposer:
     """
@@ -99,8 +104,11 @@ class ProblemDecomposer:
             next_level = []
             
             for parent_problem in current_level_problems:
-                # Create 2-3 sub-problems for each parent
-                child_count = min(3, max(2, len(parent_problem["description"]) // 50))
+                # Create 2-3 sub-problems for each parent based on complexity
+                child_count = min(
+                    MAX_CHILDREN_PER_PARENT,
+                    max(MIN_CHILDREN_PER_PARENT, len(parent_problem["description"]) // CHARS_PER_CHILD)
+                )
                 
                 for i in range(child_count):
                     child_id = f"{parent_problem['id']}_child_{i+1}"

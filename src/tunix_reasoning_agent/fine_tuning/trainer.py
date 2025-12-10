@@ -8,10 +8,18 @@ import os
 from pathlib import Path
 from datetime import datetime
 
+# Training simulation constants
+INITIAL_LOSS = 1.0
+LOSS_DECAY_RATE = 0.2
+
 
 class TunixTrainer:
     """
     Fine-tuning trainer using Google's Tunix/Gemini API.
+    
+    Note: This is a placeholder implementation for the hackathon.
+    Actual Tunix/Gemini API integration will be added in future releases.
+    Currently simulates the training process for demonstration purposes.
     
     This trainer supports:
     - Dataset preparation for reasoning tasks
@@ -224,7 +232,7 @@ class TunixTrainer:
         # Simulate training
         history = []
         for epoch in range(num_epochs):
-            epoch_loss = 1.0 - (epoch * 0.2)  # Simulated decreasing loss
+            epoch_loss = INITIAL_LOSS - (epoch * LOSS_DECAY_RATE)  # Simulated decreasing loss
             
             epoch_metrics = {
                 "epoch": epoch + 1,

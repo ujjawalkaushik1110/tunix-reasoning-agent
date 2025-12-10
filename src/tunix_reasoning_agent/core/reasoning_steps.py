@@ -6,6 +6,10 @@ Understand -> Plan -> Execute -> Verify framework.
 from typing import Dict, Any, List, Optional
 from abc import ABC, abstractmethod
 
+# Constants
+STOP_WORDS = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 
+              'to', 'for', 'of', 'with', 'is', 'are', 'was', 'were'}
+
 
 class ReasoningStep(ABC):
     """Abstract base class for reasoning steps."""
@@ -144,9 +148,8 @@ class UnderstandStep(ReasoningStep):
         """Extract key concepts from the problem."""
         # Simple keyword extraction
         words = problem.lower().split()
-        # Filter out common words
-        stop_words = {'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'is', 'are', 'was', 'were'}
-        concepts = [word.strip('.,!?;:') for word in words if word not in stop_words and len(word) > 3]
+        # Filter out common words using predefined stop words
+        concepts = [word.strip('.,!?;:') for word in words if word not in STOP_WORDS and len(word) > 3]
         
         # Return unique concepts
         return list(set(concepts))[:10]  # Limit to top 10
