@@ -10,10 +10,16 @@ on:
       - main
       - develop
 
+# Restrict permissions for GITHUB_TOKEN to minimum required
+permissions:
+  contents: read
+
 jobs:
   lint-and-test:
     name: Lint and Test
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
@@ -61,6 +67,8 @@ jobs:
   security-check:
     name: Security Scan
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout code
